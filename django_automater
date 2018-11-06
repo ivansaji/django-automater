@@ -1,0 +1,54 @@
+import os
+
+def pipcode():
+	os.system("clear")
+	print("Installing PIP")
+	os.system("sudo apt-get install python3-pip")
+
+def venv():
+	os.system("clear")
+	print("Installing Virtual Environment")
+	os.system("apt-get install python3-venv")
+	print("Create Virtual Environment ")
+	opt2=input("1) Yes 2) No")
+	if (opt2=="1"):
+		envname=input("Enter name for virtual environment")
+		os.system("python3 -m venv " + envname)
+
+	elif (opt2=="2"):
+		main()
+	else:
+		print("Invalid Option")
+
+
+def django():
+	# Django code lines
+	os.system(envname + '/source/bin/activate')
+	os.system("pip3 install django")
+
+
+
+def main():
+	os.system("clear")
+	print("Django Automater By:Ivan Saji Abraham")
+	opt1=input(" Choose an operation 1) Install PIP 2) Install Python Virtual Env & Django in Env 3) Exit")
+	if (opt1=="1"):
+		# pip install codes
+		pipcode()
+		main()
+	
+	elif (opt1=="2"):
+		# Django install
+		venv()
+		django()
+		main()
+	
+	elif (opt1=="3"):
+		exit(0)
+		
+	else:
+		print("Invalid Option")
+		main()
+	
+
+main()
